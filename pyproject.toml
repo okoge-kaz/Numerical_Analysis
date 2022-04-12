@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "numerical_analysis"
+version = "0.1.0"
+description = ""
+authors = ["kazuki <kaz.tokyo.tech20@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "numpy"
+
+[tool.poetry.dev-dependencies]
+matplotlib = "^3.5.1"
+japanize-matplotlib = "^1.1.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
