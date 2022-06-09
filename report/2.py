@@ -63,10 +63,12 @@ def main(argv: list):
 
     x_array, v_array = leap_frog_method(f, 1, 0, 0.01, 1000)
     plt.plot(x_array, v_array, label="xv-LF")
+    plt.title('xv-LF')
     plt.show()
 
     x_array, v_array = Heun_method(f, 1, 0, 0.01, 1000)
     plt.plot(x_array, v_array, label="xv-Heun")
+    plt.title('xv-Heun')
     plt.show()
 
 
