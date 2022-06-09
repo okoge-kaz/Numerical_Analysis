@@ -41,14 +41,13 @@ def Heun_method(f, x0: float, v0: float, dt: float, n: int) -> tuple[list[float]
     :param v0: initial value of v
     :param dt: time step
     :param n: number of steps
-    :return: x(n+1) and v(n+1)
     """
     x = x0
     v = v0
     x_array: list[float] = [x]
     v_array: list[float] = [v]
 
-    for i in range(n):
+    for _ in range(n):
         k1: float = f(x)
         k2: float = f(x + dt * k1)
         x = x + dt * v
