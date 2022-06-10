@@ -31,9 +31,11 @@ def Laplace_solver(N: int, k_max: int, eps: float, x_len: float, t_len: float) -
         for x in range(1, N):
             for t in range(1, N):
                 U[x, t] = (U[x, t - 1] + U[x, t + 1] + U[x - 1, t] + U[x + 1, t]) / 4
-
-        rdelta: float = np.amax(abs((U - old_U) / U))
+        delta: np.ndarray = np.abs(U - old_U) / U
+        delta[np.isnan(delta)] = 0
+        rdelta: float = delta.max()
         if rdelta < eps:
+            print('r-delta:', rdelta)
             break
         if k > k_max:
             break
@@ -59,7 +61,7 @@ def Laplace_solver(N: int, k_max: int, eps: float, x_len: float, t_len: float) -
 
 def main(argv: list):
     N: int = 100
-    k_max: int = 1000
+    k_max: int = 10000
     eps: float = 1e-4
     Laplace_solver(N, k_max, eps, 1, 5)
 
