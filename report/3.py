@@ -58,7 +58,7 @@ def main():
     # parameters
     s, r, b = 10, 28, 8 / 3
     # initial conditions
-    x0, y0, z0 = 0.2, 0.1, 0.1
+    x0, y0, z0 = 0.5, 0.3, 0.1
 
     def f_x(x, y, z):
         return -s * x + s * y
